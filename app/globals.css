@@ -1,44 +1,39 @@
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 
-/* =====================================================
+/* ===============================
    DESIGN TOKENS
-===================================================== */
+================================ */
 :root {
   --primary: #293957;
   --accent: #ef852c;
   --bg: #f4f6fb;
   --surface: #ffffff;
-  --muted: #9aa4bf;
+  --muted: #8b93a7;
 }
 
-/* =====================================================
-   BASE STYLES
-===================================================== */
+/* ===============================
+   BASE
+================================ */
 html,
 body {
   background-color: var(--bg);
   color: var(--primary);
-  scroll-behavior: smooth;
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
 }
 
-/* Prevent horizontal overflow issues */
-body {
-  overflow-x: hidden;
-}
-
-/* =====================================================
-   LAYOUT HELPERS
-===================================================== */
+/* ===============================
+   LAYOUT
+================================ */
 .section {
-  padding: 7rem 1.5rem;
+  padding: 4rem 1.5rem;
 }
 
-.surface {
+@media (min-width: 1024px) {
+  .section {
+    padding: 5rem 1.5rem;
+  }
+}
+
+.bg-surface {
   background-color: var(--surface);
 }
 
@@ -46,88 +41,51 @@ body {
   color: var(--muted);
 }
 
-/* =====================================================
+/* ===============================
    BUTTONS
-===================================================== */
+================================ */
 .btn-primary {
   background-color: var(--accent);
-  color: #ffffff;
-  padding: 0.9rem 2.4rem;
+  color: white;
+  padding: 0.85rem 2.25rem;
   border-radius: 999px;
   font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(239, 133, 44, 0.35);
+  box-shadow: 0 10px 25px rgba(239, 133, 44, 0.35);
 }
 
-.btn-primary:active {
-  transform: scale(0.97);
-}
-
-/* =====================================================
-   CARD COMPONENT
-===================================================== */
+/* ===============================
+   CARD
+================================ */
 .card {
-  background-color: var(--surface);
+  background: var(--surface);
   border-radius: 1.25rem;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.08);
 }
 
-/* =====================================================
-   INTERACTIONS & ACCESSIBILITY
-===================================================== */
-button,
-a {
-  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease,
-    opacity 0.2s ease;
+/* ===============================
+   TYPOGRAPHY POLISH
+================================ */
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
 }
 
-button:active {
-  transform: scale(0.97);
-}
-
-input:focus-visible,
-button:focus-visible,
-a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-/* =====================================================
-   NAVBAR SAFETY (NO TRANSPARENCY EVER)
-===================================================== */
-nav {
-  background-color: #ffffff;
-  opacity: 1;
-}
-
-/* =====================================================
-   IMAGES
-===================================================== */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Hide horizontal scrollbar */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+/* ===============================
+   SECTION CONTRAST
+================================ */
+.bg-bg {
+  background-color: var(--bg);
 }
