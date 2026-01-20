@@ -1,50 +1,44 @@
-"use client";
-import { motion } from "framer-motion";
-import FloatingPokerFX from "./FloatingPokerFX";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ backgroundColor: "#293957" }}
-    >
-      {/* Floating poker elements */}
-      <FloatingPokerFX />
+    <section className="section pt-32">
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+        {/* TEXT */}
+        <div>
+          <p className="text-sm uppercase tracking-wide text-[#ef852c] mb-4">
+            Premium Poker Merchandise
+          </p>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="uppercase tracking-[0.3em] text-xs text-[#9aa4bf] mb-6"
-        >
-          Poker Merchandise
-        </motion.p>
+          <h1 className="text-5xl md:text-6xl font-light leading-tight mb-6">
+            Designed for players
+            <br />
+            who respect the grind.
+          </h1>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-5xl md:text-7xl font-light leading-tight text-white mb-8"
-        >
-          Play the game. <br />
-          Wear the mindset.
-        </motion.h1>
+          <p className="text-muted max-w-lg mb-10">
+            Apparel and accessories inspired by mindset, discipline, and life
+            beyond the table.
+          </p>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-lg text-[#cfd6ea] max-w-xl mx-auto mb-12"
-        >
-          Premium poker-inspired merchandise for players who live the game
-          beyond the table.
-        </motion.p>
+          <div className="flex gap-6">
+            <Link href="/shop/shop" className="btn-primary">
+              Shop Now
+            </Link>
 
-        <motion.button whileHover={{ scale: 1.05 }} className="btn-primary">
-          Explore Collection
-        </motion.button>
+            <Link
+              href="/marketing/about"
+              className="underline text-sm self-center"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
+
+        {/* VISUAL PLACEHOLDER */}
+        <div className="hidden lg:block">
+          <div className="w-[360px] h-[460px] bg-[#293957]/5 rounded-3xl mx-auto" />
+        </div>
       </div>
     </section>
   );

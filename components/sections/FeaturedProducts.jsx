@@ -12,9 +12,10 @@ export default function FeaturedProducts() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-14 text-center">
-          <h2 className="text-4xl font-light mb-4">Featured Merchandise</h2>
-          <p className="text-muted max-w-xl mx-auto">
-            A curated selection from our most popular collections.
+          <h2 className="text-4xl font-light mb-4">Best Sellers</h2>
+
+          <p className="text-muted mb-12">
+            Our most loved products by the poker community
           </p>
         </div>
 
